@@ -38,10 +38,16 @@ button:focus {
   border-radius: 3px;
   color: $button-color;
   transition: 0.3s;
+  font-size: 14px;
 }
 
 .button-main:hover {
   border: 1px solid $button-color-active;
   color: #ffffff;
   background: $button-color-active;
+}
+
+.button-main-another {
+  color: $button-color-active;
+  border: 1px solid $button-color-active;
 }
