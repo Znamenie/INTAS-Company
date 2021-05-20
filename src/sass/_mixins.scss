@@ -74,3 +74,9 @@
     font-family: 'object-fit: #{$fit}';
   }
 }
+
+@include font-face('Nunito', '../fonts/Nunito', 500, normal);
+@include font-face('NunitoBold', '../fonts/Nunito', bold, normal);
+
+@include font-face('RubikRegular', '../fonts/Rubik', 500, normal);
+@include font-face('RubikRegular', '../fonts/Rubik', bold, normal);

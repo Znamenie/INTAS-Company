@@ -2,3 +2,19 @@
 @import '_variables';
 @import '_desktop.scss';
 @import '_responsive';
+
+@import '_main.sass';
+@import '_nav.sass';
+@import '_content.sass';
+
+* {
+  font-family: 'Nunito';
+}
+
+body {
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
