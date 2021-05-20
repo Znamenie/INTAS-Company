@@ -51,3 +51,20 @@ $(function() {
   objectFitImages();
   initPhoneMask();
 });
+
+function openNav() {
+  document.getElementById('mySidebar').style.width = '100%';
+  document.getElementById('content').style.gridTemplateColumns = '200px 1fr';
+  document.getElementById('openbtn').style.display = 'none';
+  document.getElementById('closebtn').style.display = 'block';
+  document.getElementById('nav-title').style.display = 'block';
+}
+
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById('mySidebar').style.width = '0px';
+  document.getElementById('content').style.gridTemplateColumns = '50px 1fr';
+  document.getElementById('openbtn').style.display = 'block';
+  document.getElementById('closebtn').style.display = 'none';
+  document.getElementById('nav-title').style.display = 'none';
+}

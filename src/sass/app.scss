@@ -18,3 +18,30 @@ body {
 a {
   text-decoration: none;
 }
+
+button {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+button:focus {
+  outline: none;
+}
+
+.button-main {
+  background: none;
+  border: 1px solid $button-color;
+  height: 32px;
+  min-width: 82px;
+  padding: 0 20px;
+  border-radius: 3px;
+  color: $button-color;
+  transition: 0.3s;
+}
+
+.button-main:hover {
+  border: 1px solid $button-color-active;
+  color: #ffffff;
+  background: $button-color-active;
+}
