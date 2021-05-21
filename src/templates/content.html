@@ -13,36 +13,33 @@
         </div>
         <div class="navbar__items">
             <ul id="mySidebar" class="navbar__items__sidebar">
-                <li>Test's name</li>
-                <li>Another Test</li>
-                <li>Test</li>
-                <li>Название теста</li>
+                <li id="sidebar-item-one" onclick="displayDescOne(this.id)">Test's name</li>
+                <li id="sidebar-item-two" onclick="displayDescOne(this.id)">Another Test</li>
+                <li id="sidebar-item-three" onclick="displayDescOne(this.id)">Test</li>
+                <li id="sidebar-item-four" onclick="displayDescOne(this.id)">Название теста</li>
             </ul>
         </div>
     </div>
 
     <div class="module">
-        <div class="module__start" style="display: none;">
+        <div class="module__start" id="module-start">
             <p>Выберите тест из списка</p>
         </div>
 
-        <div class="module__description" style="display: none;">
+        <div class="module__description" id="module-description">
             <div class="module__description__title">
                 <p>Описание</p>
             </div>
             <div class="module__description__text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. 
-                    Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. 
-                    Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus 
-                    mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.</p>
+                <p id="module-description-text"></p>
             </div>
             <div class="module__description__buttons">
                 <button class="button-main">Начать</button>
-                <button class="button-main">Отмена</button>
+                <button class="button-main" onclick="hideDescOne()">Отмена</button>
             </div>
         </div>
 
-        <div class="module__employment">
+        <div class="module__employment" id="module-employment">
             <div class="module__employment__title">
                 <div class="employment-exit">
                     <p>Выход</p>

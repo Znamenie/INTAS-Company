@@ -1,57 +1,3 @@
-/**
- * Инициализация функции маски для поля телефона
- * Документация: https://imask.js.org/guide.html
- */
-function initPhoneMask() {
-  $('input[type=tel]').each(function(index, element) {
-    var mask = IMask(element, {
-      mask: [
-        {
-          mask: '+7 (000) 000-00-00',
-          startsWith: '+7',
-          country: 'Russia',
-        },
-        {
-          mask: '+7 (000) 000-00-00',
-          startsWith: '7',
-          country: 'Russia',
-        },
-        {
-          mask: '0 (000) 000-00-00',
-          startsWith: '8',
-          country: 'Russia',
-        },
-        {
-          mask: '+7 (000) 000-00-00',
-          startsWith: '',
-          country: 'unknown',
-        },
-      ],
-      dispatch: function(appended, dynamicMasked) {
-        var number = (dynamicMasked.value + appended).replace(/\D/g, '');
-        return dynamicMasked.compiledMasks.find(function(m) {
-          return number.indexOf(m.startsWith) === 0;
-        });
-      },
-    });
-    $(this).blur(function() {
-      var maskValue = mask.unmaskedValue;
-      var startWith = 10;
-      if (maskValue.charAt(0) === '8') {
-        startWith = 11;
-      }
-      if (maskValue.length < startWith) {
-        mask.value = '';
-      }
-    });
-  });
-}
-
-$(function() {
-  objectFitImages();
-  initPhoneMask();
-});
-
 function openNav() {
   document.getElementById('mySidebar').style.width = '100%';
   document.getElementById('content').style.gridTemplateColumns = '200px 1fr';
@@ -67,4 +13,48 @@ function closeNav() {
   document.getElementById('openbtn').style.display = 'block';
   document.getElementById('closebtn').style.display = 'none';
   document.getElementById('nav-title').style.display = 'none';
+}
+
+// Открытие описания тестов
+function displayDescOne(numId) {
+  var textOne = [
+    'Test1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.',
+  ];
+  var textTwo = [
+    'Test2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.',
+  ];
+  var textThree = [
+    'Test3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.',
+  ];
+  var textFour = [
+    'Test4 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.',
+  ];
+  var textFive = [
+    'Test5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.',
+  ];
+
+  if (numId == 'sidebar-item-one') {
+    document.getElementById('module-description-text').innerHTML = '';
+    document.getElementById('module-description-text').innerHTML = textOne;
+  } else if (numId == 'sidebar-item-two') {
+    document.getElementById('module-description-text').innerHTML = '';
+    document.getElementById('module-description-text').innerHTML = textTwo;
+  } else if (numId == 'sidebar-item-three') {
+    document.getElementById('module-description-text').innerHTML = '';
+    document.getElementById('module-description-text').innerHTML = textThree;
+  } else {
+    document.getElementById('module-description-text').innerHTML = '';
+    document.getElementById('module-description-text').innerHTML = textFour;
+  }
+
+  document.getElementById('module-start').style.display = 'none';
+  document.getElementById('module-description').style.display = 'block';
+  document.getElementById('module-employment').style.display = 'none';
+}
+
+function hideDescOne() {
+  document.getElementById('module-description-text').innerHTML = '';
+  document.getElementById('module-start').style.display = 'flex';
+  document.getElementById('module-description').style.display = 'none';
+  document.getElementById('module-employment').style.display = 'none';
 }
