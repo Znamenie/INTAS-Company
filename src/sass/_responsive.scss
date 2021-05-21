@@ -15,16 +15,92 @@
   .container {
     max-width: 100%;
   }
+  .content {
+    width: 1000px !important;
+  }
 }
 
 /**
   Планшет вертикальный
  */
 @media screen and (max-width: 1023px) {
+  .content {
+    width: 900px !important;
+  }
+}
+
+@media screen and (max-width: 924px) {
+  .content {
+    width: 800px !important;
+  }
+
+  #mySidebar {
+    width: 0px;
+  }
+
+  #content {
+    grid-template-columns: 50px 1fr;
+  }
+
+  #openbtn {
+    display: block;
+  }
+
+  #closebtn {
+    display: none;
+  }
+
+  #nav-title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 824px) {
+  .content {
+    width: 700px !important;
+  }
 }
 
 /**
   Мобильные устройства
  */
 @media screen and (max-width: 767px) {
+  .content {
+    width: 500px !important;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .content {
+    width: 400px !important;
+  }
+
+  .employment-name {
+    font-size: 10px !important;
+  }
+
+  .employment-another {
+    flex-direction: column !important;
+  }
+
+  .employment-another__stage {
+    margin: 5px 0 !important;
+  }
+
+  .module__employment__title {
+    border: none !important;
+    height: 70px !important;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .content {
+    width: 390px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content {
+    width: 100% !important;
+  }
 }
