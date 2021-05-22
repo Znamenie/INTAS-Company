@@ -127,6 +127,13 @@ function exitTest() {
   document.getElementById('my_modal').style.display = 'none';
 }
 
+//Открытие результатов
+function openResults() {
+  document.getElementById('module-start').style.display = 'none';
+  document.getElementById('module-description').style.display = 'none';
+  document.getElementById('module-employment').style.display = 'none';
+  document.getElementById('module-results').style.display = 'block';
+}
 //Таймер
 // (function() {
 //   "use strict";

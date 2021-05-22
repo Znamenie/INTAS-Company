@@ -116,7 +116,7 @@
                 margin-right: 20px
 
     &__employment
-        display: none //flex-none
+        display: flex //flex-none
         flex-direction: column
         width: 100%
         user-select: none
@@ -174,44 +174,45 @@
             line-height: 24px
             font-size: 16px
 
-            .workplace-items
-                display: flex
-                flex-direction: column
-                margin-bottom: 12px
+            .question
+                font-size: 16px
+                margin: 12px 0
 
-                &__title
+            .answers
+                display: grid
+                align-items: stretch
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                justify-items: stretch
+                background: $module-employment-options-bg
+                border-radius: 3px
+                height: 48px
+                font-size: 13px
+
+                label
                     display: flex
-                    font-size: 16px
-                    line-height: 24px
+                    align-items: center
+                    justify-content: center
+                    margin-bottom: 0
 
-                &__options-vertical
-                    display: flex
-                    flex-direction: column
-                    align-items: flex-start
-                    background: $module-employment-options-bg
-                    border-radius: 3px
-                    margin-top: 12px
-                    padding-left: 36px
+                input
+                    margin-right: 10px
 
-                &__options
-                    display: grid
-                    align-items: stretch
-                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                    justify-items: stretch
-                    background: $module-employment-options-bg
-                    border-radius: 3px
-                    margin-top: 12px
+            #submit
+                background: none
+                border: 1px solid $button-color-active
+                height: 32px
+                min-width: 82px
+                padding: 0 20px
+                border-radius: 3px
+                color: $button-color-active
+                transition: 0.3s
+                font-size: 14px
+                margin-top: 20px
 
-                    &__elements
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        height: 48px
-                        font-size: 13px
-                        color: $text-color-2
-                        label
-                            margin: 0
-                            margin-left: 10px
+                &:hover
+                    border: 1px solid $button-color-active
+                    color: #ffffff
+                    background: $button-color-active
 
         &__buttons
             padding: 0 16px
@@ -219,6 +220,7 @@
                 margin-right: 20px
 
     &__results
+        display: none // block - none
         padding: 16px
         width: 100%
         p
