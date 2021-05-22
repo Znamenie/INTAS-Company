@@ -1,3 +1,34 @@
+let currentBtn;
+let btns = document.querySelectorAll('button[data-type="def"]');
+let startBtn = document.querySelector('button[data-type="start"]');
+btns.forEach((e) => {
+  e.addEventListener('click', function() {
+    currentBtn = this;
+  });
+});
+
+startBtn.addEventListener('click', function() {
+  window[currentBtn.getAttribute('data-func')]();
+});
+
+function func1() {
+  document.getElementById('module-start').style.display = 'none';
+  document.getElementById('module-description').style.display = 'none';
+  document.getElementById('module-employment').style.display = 'flex';
+}
+
+function func2() {
+  alert('2 func');
+}
+
+function func3() {
+  alert('3 func');
+}
+
+function func4() {
+  alert('4 func');
+}
+
 function openNav() {
   document.getElementById('mySidebar').style.width = '100%';
   document.getElementById('content').style.gridTemplateColumns = '200px 1fr';
@@ -32,6 +63,8 @@ function displayDescOne(numId) {
   var textFive = [
     'Test5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper volutpat tristique. Fusce et nunc porttitor, pretium urna at, sagittis purus. Nullam sagittis congue sapien non sodales. Aliquam vel condimentum lacus, sit amet feugiat velit. Suspendisse congue imperdiet dui, sit amet cursus mi viverra sed. Nam porttitor venenatis vehicula. Vestibulum sed arcu vel lorem venenatis tempor.',
   ];
+
+  var startTests = document.getElementById('start-test');
 
   if (numId == 'sidebar-item-one') {
     document.getElementById('module-description-text').innerHTML = '';

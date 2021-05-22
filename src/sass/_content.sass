@@ -12,6 +12,7 @@
     grid-area: navbar
     background: $module-navbar-bg
     position: relative
+    user-select: none
 
     &__title
         position: relative
@@ -48,12 +49,16 @@
             list-style: none
             padding: 0
             cursor: pointer
-            li
+            button
+                display: flex
+                justify-content: flex-start
+                align-items: center
                 color: $text-color-2
                 font-size: 14px
                 transition: 0.3s
                 padding: 0 7px
                 border-radius: 3px
+                width: 100%
                 &::before
                     content: "\2022"
                     color: #000000
