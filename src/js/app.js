@@ -84,6 +84,11 @@ function displayDescOne(numId) {
   document.getElementById('module-start').style.display = 'none';
   document.getElementById('module-description').style.display = 'block';
   document.getElementById('module-employment').style.display = 'none';
+  document.getElementById('module-results').style.display = 'none';
+  var elements = document.getElementsByClassName('answers'); // get all elements
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.color = '#263238';
+  }
 }
 
 // Закрытие описания тестов кнопка "Отмена"
@@ -127,6 +132,19 @@ function exitTest() {
   document.getElementById('my_modal').style.display = 'none';
 }
 
+//Конец теста
+function endTest() {
+  document.getElementById('module-start').style.display = 'flex';
+  document.getElementById('module-description').style.display = 'none';
+  document.getElementById('module-employment').style.display = 'none';
+  document.getElementById('module-results').style.display = 'none';
+  $('input[type=radio]').prop('checked', false);
+  var elements = document.getElementsByClassName('answers'); // get all elements
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.color = '#263238';
+  }
+}
+
 //Открытие результатов
 function openResults() {
   document.getElementById('module-start').style.display = 'none';
@@ -134,51 +152,3 @@ function openResults() {
   document.getElementById('module-employment').style.display = 'none';
   document.getElementById('module-results').style.display = 'block';
 }
-//Таймер
-// (function() {
-//   "use strict";
-//   var secondsLabel = document.getElementById('emply-seconds'),
-//   minutesLabel = document.getElementById('emply-minutes'),
-//   hoursLabel = document.getElementById('emply-hours'), totalSeconds = 0,
-//   startButton = document.getElementById('start-test'),
-//   stopButton = document.getElementById('exit-test'),
-//   resetButton = document.getElementById('reset'), timer = null;
-
-//   startButton.onclick = function() {
-//     if (!timer) {
-//       timer = setInterval(setTime, 1000);
-//     }
-//   };
-
-//   stopButton.onclick = function() {
-//     if (timer) {
-//       clearInterval(timer);
-//       timer = null;
-//       totalSeconds = 0;
-//     }
-//   }
-
-//   resetButton.onclick = function() {
-//     if (timer) {
-//       totalSeconds = 0;
-//       stop();
-//     }
-//   }
-
-//   function setTime() {
-//     totalSeconds++;
-//     secondsLabel.innerHTML = pad(totalSeconds % 60);
-//     minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-//     hoursLabel.innerHTML = pad(parseInt(totalSeconds / 3600))
-//   }
-
-//   function pad(val) {
-//     var valString = val + "";
-//     if (valString.length < 2) {
-//       return "0" + valString;
-//     } else {
-//       return valString;
-//     }
-//   }
-
-// })();
