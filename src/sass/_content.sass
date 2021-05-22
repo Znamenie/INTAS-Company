@@ -80,7 +80,7 @@
     font-size: 15px
 
     &__start
-        display: flex // flex-none
+        display: none // flex-none
         align-items: center
         justify-content: center
         width: 100%
@@ -119,6 +119,7 @@
         display: none //flex-none
         flex-direction: column
         width: 100%
+        user-select: none
         p
             margin: 0
         &__title
@@ -132,6 +133,10 @@
             color: $text-color-3
             h2
                 margin: 0
+            button
+                background: none
+                font-size: 12px
+                color: $text-color-4
 
             .employment-exit
                 color: $text-color-4
@@ -154,6 +159,9 @@
                     margin: 0 10px
                     padding: 0 10px
 
+                &__timer
+                    display: flex
+
         &__buttons
             display: flex
             align-items: center
@@ -175,6 +183,15 @@
                     display: flex
                     font-size: 16px
                     line-height: 24px
+
+                &__options-vertical
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-start
+                    background: $module-employment-options-bg
+                    border-radius: 3px
+                    margin-top: 12px
+                    padding-left: 36px
 
                 &__options
                     display: grid
@@ -200,3 +217,88 @@
             padding: 0 16px
             button
                 margin-right: 20px
+
+    &__results
+        padding: 16px
+        width: 100%
+        p
+            margin: 0
+
+        &__title
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            flex-direction: column
+            margin-bottom: 5px
+            h3
+                font-size: 24px
+            p
+                font-size: 13px
+                color: $text-color-4
+
+        &__answers
+            .answers-head
+                color: $text-color-4
+                font-size: 16px
+                margin-bottom: 10px
+            .answers-items
+                &__item
+                    border-bottom: 2px solid $border-lines
+                    border-bottom-style: dashed
+                    margin-bottom: 6px
+                    padding-bottom: 14px
+
+                    &__number
+                        margin-bottom: 6px
+
+                    &__result
+                        margin-left: 16px
+
+                    .text-result
+                        display: flex
+                        margin-bottom: 8px
+                        p
+                            &:first-child
+                                margin-right: 5px
+
+        &__try-again
+            margin-top: 42px
+            padding: 9px
+            border-top: 1px solid $border-lines
+
+.modal
+    display: none
+    position: fixed
+    z-index: 1
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    overflow: auto
+    background-color: rgba(0,0,0,0.6)
+    z-index: 1000
+
+    .modal_content
+        background-color: #fefefe
+        margin: 15% auto
+        padding: 20px
+        border: 1px solid #888
+        width: 320px
+        height: 144px
+        z-index: 99999
+        border-radius: 3px
+
+        &__title
+            display: flex
+            flex-direction: column
+            align-items: center
+            h3
+                font-size: 18px
+                font-weight: normal
+            p
+                font-size: 14px
+
+        &__buttons
+            display: flex
+            justify-content: space-evenly

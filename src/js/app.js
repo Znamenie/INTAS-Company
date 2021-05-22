@@ -1,3 +1,4 @@
+// Выбор тестов и кнопка "Начать"
 let currentBtn;
 let btns = document.querySelectorAll('button[data-type="def"]');
 let startBtn = document.querySelector('button[data-type="start"]');
@@ -29,6 +30,7 @@ function func4() {
   alert('4 func');
 }
 
+// Открытие-закрытие меню
 function openNav() {
   document.getElementById('mySidebar').style.width = '100%';
   document.getElementById('content').style.gridTemplateColumns = '200px 1fr';
@@ -37,7 +39,6 @@ function openNav() {
   document.getElementById('nav-title').style.display = 'block';
 }
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
 function closeNav() {
   document.getElementById('mySidebar').style.width = '0px';
   document.getElementById('content').style.gridTemplateColumns = '50px 1fr';
@@ -85,9 +86,92 @@ function displayDescOne(numId) {
   document.getElementById('module-employment').style.display = 'none';
 }
 
+// Закрытие описания тестов кнопка "Отмена"
 function hideDescOne() {
   document.getElementById('module-description-text').innerHTML = '';
   document.getElementById('module-start').style.display = 'flex';
   document.getElementById('module-description').style.display = 'none';
   document.getElementById('module-employment').style.display = 'none';
 }
+
+// Выход из теста, кнопка "Выход"
+var modal = document.getElementById('my_modal');
+var btn = document.getElementById('btn_modal_window');
+var span = document.getElementsByClassName('close_modal_window')[0];
+
+btn.onclick = function() {
+  modal.style.display = 'block';
+};
+
+span.onclick = function() {
+  modal.style.display = 'none';
+};
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+};
+
+// Сбросить все ответы
+function resetAnswers() {
+  $('input[type=radio]').prop('checked', false);
+}
+
+//Выход из теста
+function exitTest() {
+  document.getElementById('module-description-text').innerHTML = '';
+  document.getElementById('module-start').style.display = 'flex';
+  document.getElementById('module-description').style.display = 'none';
+  document.getElementById('module-employment').style.display = 'none';
+  document.getElementById('my_modal').style.display = 'none';
+}
+
+//Таймер
+// (function() {
+//   "use strict";
+//   var secondsLabel = document.getElementById('emply-seconds'),
+//   minutesLabel = document.getElementById('emply-minutes'),
+//   hoursLabel = document.getElementById('emply-hours'), totalSeconds = 0,
+//   startButton = document.getElementById('start-test'),
+//   stopButton = document.getElementById('exit-test'),
+//   resetButton = document.getElementById('reset'), timer = null;
+
+//   startButton.onclick = function() {
+//     if (!timer) {
+//       timer = setInterval(setTime, 1000);
+//     }
+//   };
+
+//   stopButton.onclick = function() {
+//     if (timer) {
+//       clearInterval(timer);
+//       timer = null;
+//       totalSeconds = 0;
+//     }
+//   }
+
+//   resetButton.onclick = function() {
+//     if (timer) {
+//       totalSeconds = 0;
+//       stop();
+//     }
+//   }
+
+//   function setTime() {
+//     totalSeconds++;
+//     secondsLabel.innerHTML = pad(totalSeconds % 60);
+//     minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+//     hoursLabel.innerHTML = pad(parseInt(totalSeconds / 3600))
+//   }
+
+//   function pad(val) {
+//     var valString = val + "";
+//     if (valString.length < 2) {
+//       return "0" + valString;
+//     } else {
+//       return valString;
+//     }
+//   }
+
+// })();

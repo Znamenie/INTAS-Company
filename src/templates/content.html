@@ -42,20 +42,22 @@
         <div class="module__employment" id="module-employment">
             <div class="module__employment__title">
                 <div class="employment-exit">
-                    <p>Выход</p>
+                    <button id="btn_modal_window">Выход</button>
                 </div>
                 <div class="employment-name">
                     <h2>Test's name</h2>
                 </div>
                 <div class="employment-another">
                     <div class="employment-another__reset">
-                        <p>Сбросить все ответы</p>
+                        <button class="resetAnswers" onclick="resetAnswers()">Сбросить все ответы</button>
                     </div>
                     <div class="employment-another__stage">
-                        <p>2/5</p>
+                        <span>0/5</span>
                     </div>
                     <div class="employment-another__timer">
-                        <span>00:05:12</span>
+                        <p id='emply-hours'>00:</p>
+                        <p id='emply-minutes'>00:</p>
+                        <p id='emply-seconds'>00</p>
                     </div>
                 </div>
             </div>
@@ -67,27 +69,27 @@
                     </div>
                     <div class="workplace-items__options">
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut" id="_aa" value="Avery">
+                            <input type="radio" name="beerbut" id="_aa">
                             <label for="_aa">Вариант А</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut" id="_bb" value="Avery">
+                            <input type="radio" name="beerbut" id="_bb">
                             <label for="_bb">Вариант Б</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut" id="_cc" value="Avery">
+                            <input type="radio" name="beerbut" id="_cc">
                             <label for="_cc">Вариант В</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut" id="_dd" value="Avery">
+                            <input type="radio" name="beerbut" id="_dd">
                             <label for="_dd">Вариант Г</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut" id="_ee" value="Avery">
+                            <input type="radio" name="beerbut" id="_ee">
                             <label for="_ee">Вариант Д</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut" id="_ff" value="Avery">
+                            <input type="radio" name="beerbut" id="_ff">
                             <label for="_ff">Вариант Е</label>
                         </div>
                     </div>
@@ -99,34 +101,120 @@
                     </div>
                     <div class="workplace-items__options">
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut2" id="_aaa" value="Avery">
+                            <input type="radio" name="beerbut2" id="_aaa">
                             <label for="_aaa">Вариант А</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut2" id="_bbb" value="Avery">
+                            <input type="radio" name="beerbut2" id="_bbb">
                             <label for="_bbb">Вариант Б</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut2" id="_ccc" value="Avery">
+                            <input type="radio" name="beerbut2" id="_ccc">
                             <label for="_ccc">Вариант В</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut2" id="_ddd" value="Avery">
+                            <input type="radio" name="beerbut2" id="_ddd">
                             <label for="_ddd">Вариант Г</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut2" id="_eee" value="Avery">
+                            <input type="radio" name="beerbut2" id="_eee">
                             <label for="_eee">Вариант Д</label>
                         </div>
                         <div class="workplace-items__options__elements">
-                            <input type="radio" name="beerbut2" id="_fff" value="Avery">
+                            <input type="radio" name="beerbut2" id="_fff">
                             <label for="_fff">Вариант Е</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="workplace-items">
+                    <div class="workplace-items__title">
+                        <span class="counter">3.</span>
+                        <p class="question">Вопрос №3</p>
+                    </div>
+                    <div class="workplace-items__options-vertical">
+                        <div class="workplace-items__options__elements">
+                            <input type="radio" name="beerbut3" id="_un1">
+                            <label for="_un1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</label>
+                        </div>
+                        <div class="workplace-items__options__elements">
+                            <input type="radio" name="beerbut3" id="_un2">
+                            <label for="_un2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet.</label>
+                        </div>
+                        <div class="workplace-items__options__elements">
+                            <input type="radio" name="beerbut3" id="_un3">
+                            <label for="_un3">Lorem ipsum dolor sit amet, aliquam sollicitudin odio sit amet.</label>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="module__employment__buttons">
                 <button class="button-main button-main-another">Завершить</button>
+            </div>
+        </div>
+
+        <div class="module__results">
+            <div class="module__results__title">
+                <h3>Тест завершён</h3>
+                <p>Вы ответили на 0 из 5 вопросов.</p>
+            </div>
+            <div class="module__results__answers">
+                <div class="answers-head">
+                    <p>Ваши ответы</p>
+                </div>
+                <div class="answers-items">
+                    <div class="answers-items__item">
+                        <div class="answers-items__item__number">
+                            <P>1. Вопрос</P>
+                        </div>
+                        <div class="answers-items__item__result">
+                            <div class="text-result true-result">
+                                <p>Правильный ответ:</p>
+                                <p>Вариант Б</p>
+                            </div>
+                            <div class="text-result your-result">
+                                <p>Вы ответили:</p>
+                                <p>Не ответили</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="answers-items">
+                    <div class="answers-items__item">
+                        <div class="answers-items__item__number">
+                            <P>2. Вопрос</P>
+                        </div>
+                        <div class="answers-items__item__result">
+                            <div class="text-result true-result">
+                                <p>Правильный ответ:</p>
+                                <p>Вариант В</p>
+                            </div>
+                            <div class="text-result your-result">
+                                <p>Вы ответили:</p>
+                                <p>Не ответили</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="answers-items">
+                    <div class="answers-items__item">
+                        <div class="answers-items__item__number">
+                            <P>3. Вопрос</P>
+                        </div>
+                        <div class="answers-items__item__result">
+                            <div class="text-result true-result">
+                                <p>Правильный ответ:</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sollicitudin odio sit amet.</p>
+                            </div>
+                            <div class="text-result your-result">
+                                <p>Вы ответили:</p>
+                                <p>Не ответили</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="module__results__try-again">
+                <button class="button-main">Пройти еще раз</button>
             </div>
         </div>
     </div>
