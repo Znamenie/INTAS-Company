@@ -28,7 +28,7 @@
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-svg-sprite": "^1.5.0",
 		"gulp-watch": "^5.0.1",
-		"husky": "^7.0.4",
+		"husky": "^4.3.8",
 		"jquery": "^3.6.0",
 		"lint-staged": "^12.1.2",
 		"posthtml-include": "^1.7.2",
