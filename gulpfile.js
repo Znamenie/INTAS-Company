@@ -3,7 +3,7 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const del = require('del');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
@@ -171,10 +171,7 @@ function hashProcess() {
  * @returns {*}
  */
 function imgProcess() {
-  return gulp
-    .src(src.img)
-    .pipe(changed(dist.img))
-    .pipe(gulp.dest(dist.img));
+  return gulp.src(src.img).pipe(changed(dist.img)).pipe(gulp.dest(dist.img));
 }
 
 /**
